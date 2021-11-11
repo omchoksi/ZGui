@@ -1,0 +1,8 @@
+name: ZGui
+version: '${project.version}'
+main: me.d3v1s0m.mynpc.MyNPC
+api-version: 1.16
+softdepend: [ ServersNPC ]
+commands:
+  zgui:
+    description: open main gui
