@@ -33,7 +33,7 @@ import java.util.List;
 
 public class MainGUI extends ZInventory {
     /**
-     * Creates a {@link ZInventory} for the given player.
+     * Creates a new inventory for the given player.
      *
      * @param player The player to create the inventory for.
      */
@@ -42,6 +42,9 @@ public class MainGUI extends ZInventory {
         setCurrentPage(new MainPage(this));
     }
 
+    /**
+     * Callback interface for setting the skin of a npc.
+     */
     interface SkinFunction {
         /** Sets the new skin of the given npc. */
         void apply(Player sender, NPC npc, String skin);
@@ -57,15 +60,18 @@ public class MainGUI extends ZInventory {
                 Configuration.MESSAGES.sendMessage(sender, ConfigurationValue.SUCCESS);
             });
 
+    /**
+     * Default/main page for gui.
+     */
     static class MainPage extends ZInventoryPage {
 
         /**
-         * Creates a new page for an {@link ZInventory}.
+         * Main GUI page.
          *
-         * @param zInventory    The inventory.
+         * @param inventory    The inventory.
          */
-        public MainPage(ZInventory zInventory) {
-            super(zInventory, "Main GUI", 3);
+        public MainPage(ZInventory inventory) {
+            super(inventory, "Main GUI", 3);
         }
 
         @Override
@@ -104,7 +110,7 @@ public class MainGUI extends ZInventory {
     static class CreatePage extends ZInventoryPage {
 
         /**
-         * Creates a new page for an {@link ZInventory}.
+         * Create NPC Page.
          *
          * @param zInventory    The inventory.
          */
@@ -242,7 +248,7 @@ public class MainGUI extends ZInventory {
         int pageID = 1;
 
         /**
-         * Creates a new page for an {@link ZInventory}.
+         * Delete NPC Page.
          *
          * @param zInventory    The inventory.
          */
@@ -312,7 +318,7 @@ public class MainGUI extends ZInventory {
         NPCModel npcModel;
 
         /**
-         * Creates a new page for an {@link ZInventory}.
+         * Confirm Delete NPC Page.
          *
          * @param zInventory    The inventory.
          */

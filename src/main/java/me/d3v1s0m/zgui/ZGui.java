@@ -13,14 +13,22 @@ public final class ZGui extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+
+        //checking if ServersNPC is present
         boolean znpcs_present = Bukkit.getPluginManager().isPluginEnabled("ServersNPC");
         if (!znpcs_present){
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Couldn't find ServersNPC");
             Bukkit.getPluginManager().disablePlugin(this);
-            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Couldn't find znpcs");
         }
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "Found znpcs...");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "Found ServersNPC...");
+
+        //ServersNPC plugin
         Plugin znpcs = Bukkit.getPluginManager().getPlugin("ServersNPC");
+
+        // ServersNPC utils
         ServersNPC.SCHEDULER = new SchedulerUtils(znpcs);
+
+        // create commands
         new AllCommands();
 
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "MyNPC enabled");

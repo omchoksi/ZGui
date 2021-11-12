@@ -10,6 +10,9 @@ import java.util.Map;
 
 public class AllCommands extends Command {
 
+    /**
+     * Creates '/zgui' command.
+     */
     public AllCommands() {
         super("zgui");
     }

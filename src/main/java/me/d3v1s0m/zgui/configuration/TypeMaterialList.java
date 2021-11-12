@@ -50,14 +50,21 @@ public enum TypeMaterialList {
     AXOLOTL(Material.BUCKET),
     GOAT(Material.WHITE_WOOL);
 
-
+    /** The material */
     private final Material material;
 
+    /**
+     * Create a {@link TypeMaterialList}
+     *
+     * @param material the material of that NPCType
+     */
     TypeMaterialList(Material material) {
         this.material = material;
     }
 
-
+    /**
+     * Returns the material for that NPC Type
+     */
     public Material getMaterial() {
         return material;
     }
